@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: mwaqarpipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mwaqarpipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: mwaqarpipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: mwaqarpipelinesjavascriptdocker 
+          image: mwaqarkubernetes.azurecr.io/mwaqarpipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
